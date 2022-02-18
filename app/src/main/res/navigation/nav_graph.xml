@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/landingFragment">
+
+    <fragment
+        android:id="@+id/landingFragment"
+        android:name="com.plutoapps.gameofwoes.LandingFragment"
+        android:label="Game of Woes"
+        tools:layout="@layout/fragment_landing" >
+        <action
+            android:id="@+id/action_landingFragment_to_choicesFragment"
+            app:destination="@id/choicesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/choicesFragment"
+        android:name="com.plutoapps.gameofwoes.ChoicesFragment"
+        android:label="Choices"
+        tools:layout="@layout/fragment_choices" >
+        <action
+            android:id="@+id/action_choicesFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+        <action
+            android:id="@+id/action_choicesFragment_to_landingFragment"
+            app:destination="@id/landingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.plutoapps.gameofwoes.GameFragment"
+        android:label="Game on!!!"
+        tools:layout="@layout/fragment_game" >
+        <action
+            android:id="@+id/action_gameFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.plutoapps.gameofwoes.ResultFragment"
+        android:label="Game Over"
+        tools:layout="@layout/fragment_result" >
+        <action
+            android:id="@+id/action_resultFragment_to_landingFragment"
+            app:destination="@id/landingFragment" />
+    </fragment>
+</navigation>
